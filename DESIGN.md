@@ -6,13 +6,13 @@
 
 ## TL;DR
 
-HappyBites started as a functional but visually bland deal-discovery tool. I redesigned it end-to-end with a system I call **Candy Glass** — a premium glassmorphic design language that's vibrant enough to feel fun but structured enough to feel trustworthy. The redesign prioritizes speed to first value, scannable deal cards, and a modal interaction that feels native rather than browser-default. Every visual decision was made in-code, so the design system is the implementation.
+HappyBites is a restaurant deal discovery app focused exclusively on **happy hours** and **lunch specials**. I redesigned it end-to-end with a system I call **Candy Glass** — a premium glassmorphic design language that's vibrant enough to feel fun but structured enough to feel trustworthy. The redesign prioritizes speed to first value, scannable deal cards, and a modal interaction that feels native rather than browser-default. Every visual decision was made in-code, so the design system is the implementation.
 
 ---
 
 ## Context & Problem
 
-HappyBites surfaces AI-ranked food, entertainment, and retail deals near the user's location. The backend is capable — multi-source ingestion, ML ranking, venue deduplication — but the original frontend was a raw Streamlit default: gray, flat, no visual hierarchy, no delight.
+HappyBites surfaces AI-ranked restaurant deals — specifically **happy hours** and **lunch specials** — near the user's location. The backend is capable — multi-source ingestion, ML ranking, venue deduplication — but the original frontend was a raw Streamlit default: gray, flat, no visual hierarchy, no delight.
 
 The problem wasn't features. It was **presentation credibility**. A deal app that looks cheap signals cheap deals. Users would land on the page, see a wall of text-based results, and mentally discount the product before reading a single deal.
 
@@ -22,7 +22,7 @@ Secondary problem: Streamlit's default component system is coarse. Everything de
 
 ## Users & Jobs-to-be-Done
 
-**Primary user:** Urban deal-hunters — people who are already going out and want to spend less or discover something new. They're not coupon-clippers; they're spontaneous, mobile-adjacent, and have high visual standards because they use Airbnb, Uber Eats, and Spotify daily.
+**Primary user:** Urban diners — people who are already planning to eat out and want to find the best happy hour or lunch deal nearby. They're not coupon-clippers; they're spontaneous, mobile-adjacent, and have high visual standards because they use Airbnb, Uber Eats, and Spotify daily.
 
 | Job to be done | Design implication |
 |---|---|

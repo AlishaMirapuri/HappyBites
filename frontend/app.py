@@ -16,10 +16,7 @@ if "session_id" not in st.session_state:
     st.session_state["session_id"] = str(uuid.uuid4())
 SESSION_ID = st.session_state["session_id"]
 
-CATEGORIES = [
-    "Food & Dining", "Electronics", "Fashion", "Home & Garden",
-    "Travel", "Entertainment", "Health & Beauty", "Sports & Outdoors", "Other",
-]
+DEAL_TYPES = ["Happy Hour", "Lunch Special"]
 CITY_PRESETS = {
     "San Francisco": (37.7749, -122.4194),
     "New York":      (40.7128,  -74.0060),
@@ -33,7 +30,7 @@ _MOCK_NEARBY: dict[str, list[dict]] = {
     "San Francisco": [
         {
             "id": 9001, "title": "Happy Hour: $6 Cocktails & Half-Off Bites",
-            "merchant": "Zuni Café", "category": "Food & Dining",
+            "merchant": "Zuni Café", "category": "Happy Hour",
             "description": "Classic SF bistro offering half-price cocktails and select appetizers every weekday 5–7 PM.",
             "deal_price": 6.00, "original_price": 13.00, "discount_pct": 54,
             "distance_m": 620, "url": "", "source": "mock",
@@ -41,97 +38,97 @@ _MOCK_NEARBY: dict[str, list[dict]] = {
         },
         {
             "id": 9002, "title": "Lunch Special: Dim Sum for Two",
-            "merchant": "Dragon Beaux", "category": "Food & Dining",
+            "merchant": "Dragon Beaux", "category": "Lunch Special",
             "description": "Premium dim sum lunch set for two including 6 dishes and tea service — weekdays only.",
             "deal_price": 38.00, "original_price": 62.00, "discount_pct": 39,
             "distance_m": 1400, "url": "", "source": "mock",
             "rank_reasons": ["39% off", "1.4 km away", "Top-rated venue"],
         },
         {
-            "id": 9003, "title": "20% Off Yoga Drop-In Classes",
-            "merchant": "Ritual Gym & Yoga", "category": "Sports & Outdoors",
-            "description": "Drop into any yoga class this week at 20% off the walk-in rate. No membership needed.",
-            "deal_price": 20.00, "original_price": 25.00, "discount_pct": 20,
+            "id": 9003, "title": "Happy Hour All Night: $5 Wine & Cheese Plates",
+            "merchant": "Bar Agricole", "category": "Happy Hour",
+            "description": "Natural wine bar running all-night happy hour on Sundays — $5 pours and $8 cheese plates.",
+            "deal_price": 5.00, "original_price": 12.00, "discount_pct": 58,
             "distance_m": 900, "url": "", "source": "mock",
-            "rank_reasons": ["20% off", "0.9 km away"],
+            "rank_reasons": ["58% off", "0.9 km away"],
         },
     ],
     "New York": [
         {
-            "id": 9011, "title": "Early Bird Dinner: 3-Course for $45",
-            "merchant": "Balthazar", "category": "Food & Dining",
-            "description": "Three-course prix-fixe dinner available Sunday–Thursday before 6:30 PM. Includes a glass of house wine.",
-            "deal_price": 45.00, "original_price": 75.00, "discount_pct": 40,
+            "id": 9011, "title": "Early Bird Lunch: 3-Course for $28",
+            "merchant": "Balthazar", "category": "Lunch Special",
+            "description": "Three-course prix-fixe lunch available Monday–Friday 11:30 AM–2:30 PM. Classic French bistro fare.",
+            "deal_price": 28.00, "original_price": 52.00, "discount_pct": 46,
             "distance_m": 850, "url": "", "source": "mock",
-            "rank_reasons": ["40% off", "0.9 km away", "Highly rated"],
+            "rank_reasons": ["46% off", "0.9 km away", "Highly rated"],
         },
         {
-            "id": 9012, "title": "Rooftop Bar: Buy 2 Get 1 Free",
-            "merchant": "230 Fifth Rooftop", "category": "Food & Dining",
-            "description": "Buy any two cocktails and get the third free. Valid all night Sunday through Wednesday.",
-            "deal_price": 18.00, "original_price": 27.00, "discount_pct": 33,
+            "id": 9012, "title": "Happy Hour: $8 Cocktails & $6 Drafts",
+            "merchant": "230 Fifth Rooftop", "category": "Happy Hour",
+            "description": "Rooftop happy hour every weekday 4–7 PM. $8 cocktails, $6 draft beers, complimentary rooftop access.",
+            "deal_price": 8.00, "original_price": 18.00, "discount_pct": 56,
             "distance_m": 1100, "url": "", "source": "mock",
-            "rank_reasons": ["33% off", "1.1 km away", "Open now"],
+            "rank_reasons": ["56% off", "1.1 km away", "Open now"],
         },
         {
-            "id": 9013, "title": "Half-Price Broadway Rush Tickets",
-            "merchant": "TKTS Times Square", "category": "Entertainment",
-            "description": "Same-day rush tickets to select Broadway shows at 40–50% off box office prices. Available from 3 PM.",
-            "deal_price": 60.00, "original_price": 120.00, "discount_pct": 50,
-            "distance_m": 2200, "url": "", "source": "mock",
-            "rank_reasons": ["50% off", "2.2 km away"],
+            "id": 9013, "title": "Lunch Special: Ramen + Gyoza Set $18",
+            "merchant": "Ippudo NY", "category": "Lunch Special",
+            "description": "Lunch set includes a bowl of signature tonkotsu ramen and 4-piece gyoza. Weekdays only until 3 PM.",
+            "deal_price": 18.00, "original_price": 30.00, "discount_pct": 40,
+            "distance_m": 1600, "url": "", "source": "mock",
+            "rank_reasons": ["40% off", "1.6 km away"],
         },
     ],
     "Los Angeles": [
         {
-            "id": 9021, "title": "Taco Tuesday: $2 Street Tacos",
-            "merchant": "Guerrilla Tacos", "category": "Food & Dining",
+            "id": 9021, "title": "Taco Tuesday Lunch: $2 Street Tacos",
+            "merchant": "Guerrilla Tacos", "category": "Lunch Special",
             "description": "Every Tuesday, all street tacos are $2 each. Mix and match proteins — carne asada, carnitas, veggie.",
             "deal_price": 2.00, "original_price": 5.00, "discount_pct": 60,
             "distance_m": 740, "url": "", "source": "mock",
             "rank_reasons": ["60% off", "0.7 km away", "Fan favourite"],
         },
         {
-            "id": 9022, "title": "Blowout Sale: 30% Off Vintage Finds",
-            "merchant": "Wasteland Vintage", "category": "Fashion",
-            "description": "30% off all items this weekend only. Curated selection of designer vintage across two floors.",
-            "deal_price": None, "original_price": None, "discount_pct": 30,
-            "distance_m": 1600, "url": "", "source": "mock",
-            "rank_reasons": ["30% off", "1.6 km away"],
+            "id": 9022, "title": "Happy Hour: $5 Margaritas & Free Chips",
+            "merchant": "El Compadre", "category": "Happy Hour",
+            "description": "Daily happy hour 3–7 PM. $5 house margaritas, $4 beers, complimentary chips and salsa.",
+            "deal_price": 5.00, "original_price": 13.00, "discount_pct": 62,
+            "distance_m": 1200, "url": "", "source": "mock",
+            "rank_reasons": ["62% off", "1.2 km away"],
         },
         {
-            "id": 9023, "title": "Sunset Rooftop Yoga — Pay What You Can",
-            "merchant": "FORM Hotel Rooftop", "category": "Sports & Outdoors",
-            "description": "Guided sunset yoga session on the rooftop deck. Suggested donation $10–$20. Mats provided.",
-            "deal_price": 10.00, "original_price": 20.00, "discount_pct": 50,
-            "distance_m": 2500, "url": "", "source": "mock",
-            "rank_reasons": ["50% off", "2.5 km away", "Limited spots"],
+            "id": 9023, "title": "Lunch Special: Bao Set for $15",
+            "merchant": "Majordomo", "category": "Lunch Special",
+            "description": "Lunch bao set — three filled bao, house pickles, and a soft drink. Available weekdays noon–2:30 PM.",
+            "deal_price": 15.00, "original_price": 26.00, "discount_pct": 42,
+            "distance_m": 2000, "url": "", "source": "mock",
+            "rank_reasons": ["42% off", "2.0 km away"],
         },
     ],
     "Austin": [
         {
-            "id": 9031, "title": "Live Music Happy Hour — Free Entry + $4 Beers",
-            "merchant": "Stubb's Waller Creek", "category": "Entertainment",
-            "description": "Free entry to the outdoor stage every Friday 5–8 PM with $4 drafts and $5 margaritas.",
+            "id": 9031, "title": "Happy Hour: $4 Drafts & $5 Margaritas",
+            "merchant": "Stubb's Bar & Grill", "category": "Happy Hour",
+            "description": "Happy hour every Friday 5–8 PM on the outdoor patio. $4 draft beers, $5 margaritas, $6 cocktails.",
             "deal_price": 4.00, "original_price": 9.00, "discount_pct": 56,
             "distance_m": 950, "url": "", "source": "mock",
             "rank_reasons": ["56% off", "0.95 km away", "Open now"],
         },
         {
             "id": 9032, "title": "BBQ Lunch Plate: $12 All-In",
-            "merchant": "La Barbecue", "category": "Food & Dining",
+            "merchant": "La Barbecue", "category": "Lunch Special",
             "description": "Full BBQ plate with your choice of two meats, two sides, and a slice of bread for $12. Weekdays only.",
             "deal_price": 12.00, "original_price": 20.00, "discount_pct": 40,
             "distance_m": 1800, "url": "", "source": "mock",
             "rank_reasons": ["40% off", "1.8 km away"],
         },
         {
-            "id": 9033, "title": "Spa Sunday: 60-Min Massage $65",
-            "merchant": "Milk + Honey Spa", "category": "Health & Beauty",
-            "description": "Book a 60-minute Swedish massage on Sundays for $65 — $30 off the regular price.",
-            "deal_price": 65.00, "original_price": 95.00, "discount_pct": 32,
+            "id": 9033, "title": "Lunch Special: Tacos + Agua Fresca $11",
+            "merchant": "Veracruz All Natural", "category": "Lunch Special",
+            "description": "Three handmade tacos and a fresh agua fresca for $11. Served daily 11 AM–3 PM.",
+            "deal_price": 11.00, "original_price": 18.00, "discount_pct": 39,
             "distance_m": 600, "url": "", "source": "mock",
-            "rank_reasons": ["32% off", "0.6 km away"],
+            "rank_reasons": ["39% off", "0.6 km away"],
         },
     ],
 }
@@ -139,26 +136,23 @@ _MOCK_NEARBY: dict[str, list[dict]] = {
 # ── Modal constants ────────────────────────────────────────────────────────────
 
 CATEGORY_HERO: dict[str, tuple[str, str]] = {
-    "Food & Dining":     ("#FF6B35", "#F7931E"),
-    "Electronics":       ("#4776E6", "#8E54E9"),
-    "Fashion":           ("#EC4899", "#A855F7"),
-    "Home & Garden":     ("#10B981", "#0D9488"),
-    "Travel":            ("#3B82F6", "#6366F1"),
-    "Entertainment":     ("#F59E0B", "#EF4444"),
-    "Health & Beauty":   ("#EC4899", "#F43F5E"),
-    "Sports & Outdoors": ("#10B981", "#3B82F6"),
-    "Other":             ("#6B46C1", "#9333EA"),
+    "Happy Hour":    ("#FF6B35", "#F7931E"),
+    "Lunch Special": ("#6B46C1", "#9333EA"),
 }
 _HERO_EMOJI = {
-    "Food & Dining": "🍽", "Electronics": "⚡", "Fashion": "✦",
-    "Home & Garden": "🌿", "Travel": "✈", "Entertainment": "🎭",
-    "Health & Beauty": "✿", "Sports & Outdoors": "🏃", "Other": "✦",
+    "Happy Hour": "🍹", "Lunch Special": "🍱",
 }
 
-# Curated Unsplash photo IDs per category — deterministically picked by deal_id
+# Curated Unsplash photo IDs — restaurant/bar scenes, deterministically picked by deal_id
 CATEGORY_PHOTOS: dict[str, list[str]] = {
-    "Food & Dining": [
+    "Happy Hour": [
+        "1514362545857-3bc16c4c7d1b",  # cocktails at bar
         "1517248135467-4c7edcad34c4",  # restaurant interior
+        "1559339352-11d035aa65de",     # bar counter with drinks
+        "1470337458703-4ad1d8f15ca0",  # lively bar scene
+        "1551024709-8f23befc548e",     # cocktail close-up
+    ],
+    "Lunch Special": [
         "1414235077428-338989a2e8c0",  # vibrant food bowl
         "1565299624946-b28f40a0ae38",  # wood-fired pizza
         "1559847844-5315695dadae",     # ramen close-up
@@ -166,39 +160,8 @@ CATEGORY_PHOTOS: dict[str, list[str]] = {
         "1482049016688-2d3e1b311543",  # brunch plate
         "1484980765958-7ff1b0c0c49e",  # street tacos
     ],
-    "Electronics": [
-        "1518770660439-4636190af475",
-        "1550745165-9bc0b252726f",
-        "1498049794561-7780e7231661",
-    ],
-    "Fashion": [
-        "1441986300917-64674bd600d8",
-        "1490481651871-ab68de25d43d",
-        "1445205170230-053b83016050",
-    ],
-    "Home & Garden": [
-        "1484154218962-a197022b5858",
-        "1556909114-f6e7ad7d3136",
-    ],
-    "Travel": [
-        "1476514525535-07fb3b4ae5f1",
-        "1502602898657-3e91760cbb34",
-        "1530521954074-e0a103ceff5c",
-    ],
-    "Entertainment": [
-        "1603190287605-e6adeaa190c3",
-        "1514525253161-7a46d19cd819",
-    ],
-    "Health & Beauty": [
-        "1540555700478-4be289fbecef",
-        "1519494026892-476f4b2b5d77",
-    ],
-    "Sports & Outdoors": [
-        "1517649763962-0c623066013b",
-        "1571019613914-85f342c6a11e",
-    ],
 }
-_DEFAULT_PHOTOS = CATEGORY_PHOTOS["Food & Dining"]
+_DEFAULT_PHOTOS = CATEGORY_PHOTOS["Happy Hour"]
 
 
 def _hero_img(deal_id, cat: str) -> str:
@@ -1690,9 +1653,9 @@ with tab_discover:
         # ── Filters ───────────────────────────────────────────────────────────
         fc1, fc2, fc3, fc4 = st.columns([2, 2, 1.5, 1.5])
         with fc1:
-            category = st.selectbox(
-                "Category",
-                ["All categories"] + CATEGORIES,
+            deal_type = st.selectbox(
+                "Deal type",
+                ["All types"] + DEAL_TYPES,
                 label_visibility="collapsed",
             )
         with fc2:
@@ -1721,8 +1684,8 @@ with tab_discover:
 
         # ── Fetch — show skeleton while API call runs ─────────────────────────
         params: dict = {"sort": sort_by, "limit": 50, "offset": 0}
-        if category != "All categories":
-            params["category"] = category
+        if deal_type != "All types":
+            params["category"] = deal_type
         if max_price > 0:
             params["max_price"] = max_price
         if min_disc > 0:
@@ -1846,9 +1809,9 @@ with tab_nearby:
                 label_visibility="visible",
             )
         with sc3:
-            nb_cat = st.selectbox(
-                "Category",
-                ["Any"] + CATEGORIES,
+            nb_deal_type = st.selectbox(
+                "Deal type",
+                ["Any"] + DEAL_TYPES,
                 label_visibility="visible",
             )
         with sc4:
@@ -1867,8 +1830,8 @@ with tab_nearby:
                     params["open_now"] = "true"
                 elif nb_open == "Closed":
                     params["open_now"] = "false"
-                if nb_cat != "Any":
-                    params["category"] = nb_cat
+                if nb_deal_type != "Any":
+                    params["category"] = nb_deal_type
                 if nb_debug:
                     params["debug"] = "true"
 
@@ -2054,9 +2017,9 @@ with tab_profile:
                 pref_c1, pref_c2 = st.columns(2)
                 with pref_c1:
                     st.multiselect(
-                        "Favourite categories",
-                        CATEGORIES,
-                        default=["Food & Dining", "Entertainment"],
+                        "Preferred deal types",
+                        DEAL_TYPES,
+                        default=DEAL_TYPES,
                     )
                 with pref_c2:
                     st.number_input("Max price ($)", min_value=0, value=100, step=5)

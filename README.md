@@ -1,6 +1,6 @@
 # HappyBites
 
-AI-powered deal discovery. Ingest deals from multiple sources, normalize them with Claude, rank by value + freshness, and surface them in a clean UI.
+AI-powered restaurant deal discovery. Find and compare **happy hours** and **lunch specials** near you — ingested from multiple sources, normalized with Claude, ranked by value + freshness, and surfaced in a clean UI.
 
 ## Architecture
 

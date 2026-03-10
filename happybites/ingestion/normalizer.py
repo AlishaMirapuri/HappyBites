@@ -12,16 +12,8 @@ from happybites.ingestion.base import RawDeal
 logger = structlog.get_logger(__name__)
 
 VALID_CATEGORIES = [
-    "Electronics",
-    "Food & Dining",
-    "Fashion",
-    "Home & Garden",
-    "Travel",
-    "Entertainment",
-    "Health & Beauty",
-    "Sports & Outdoors",
-    "Automotive",
-    "Other",
+    "Happy Hour",
+    "Lunch Special",
 ]
 
 NORMALIZATION_PROMPT = """\
@@ -52,23 +44,14 @@ def _regex_normalize(raw: RawDeal) -> dict:
     deal_price = raw.deal_price or (min(prices) if prices else None)
     original_price = raw.original_price or (max(prices) if len(prices) > 1 else None)
 
-    # Rough category from keywords
+    # Classify as Happy Hour or Lunch Special based on keywords
     text = (raw.title + " " + (raw.description or "")).lower()
-    category = "Other"
-    kw_map = {
-        "Electronics": ["laptop", "phone", "tv", "monitor", "headphone", "camera", "tablet"],
-        "Food & Dining": ["food", "restaurant", "pizza", "burger", "coffee", "meal", "delivery"],
-        "Fashion": ["shirt", "shoe", "dress", "jacket", "jeans", "clothing", "apparel"],
-        "Home & Garden": ["furniture", "mattress", "kitchen", "garden", "home", "appliance"],
-        "Travel": ["flight", "hotel", "airline", "vacation", "cruise", "airbnb"],
-        "Health & Beauty": ["vitamin", "skincare", "gym", "fitness", "supplement", "beauty"],
-        "Sports & Outdoors": ["bike", "hiking", "camping", "sport", "outdoor", "running"],
-        "Entertainment": ["game", "movie", "streaming", "concert", "ticket", "book"],
-    }
-    for cat, keywords in kw_map.items():
-        if any(kw in text for kw in keywords):
-            category = cat
-            break
+    if any(kw in text for kw in ["happy hour", "cocktail", "draft", "beer", "wine", "bar", "drinks"]):
+        category = "Happy Hour"
+    elif any(kw in text for kw in ["lunch", "midday", "noon", "afternoon", "set menu", "prix fixe"]):
+        category = "Lunch Special"
+    else:
+        category = "Happy Hour"  # default for ambiguous restaurant deals
 
     quality = 0.4  # base for regex fallback
     if deal_price:
