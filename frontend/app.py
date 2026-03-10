@@ -24,6 +24,43 @@ CITY_PRESETS = {
     "Austin":        (30.2672,  -97.7431),
 }
 
+# ── Mock discover deals (shown when API/DB returns no results) ────────────────
+
+_MOCK_DISCOVER = [
+    {"id": 8001, "title": "Happy Hour: $6 Cocktails & Half-Off Small Plates",
+     "merchant": "Zuni Café", "category": "Happy Hour",
+     "description": "Weekday happy hour 4–7 PM. $6 house cocktails, $4 draft beers, and 50% off the entire small plates menu.",
+     "deal_price": 6.00, "original_price": 13.00, "discount_pct": 54, "source": "mock"},
+    {"id": 8002, "title": "Lunch Special: Dim Sum Set for Two — $38",
+     "merchant": "Dragon Beaux", "category": "Lunch Special",
+     "description": "Premium dim sum lunch set for two. Includes 6 rotating dishes, house tea service, and complimentary egg tarts. Weekdays 11 AM–2:30 PM.",
+     "deal_price": 38.00, "original_price": 62.00, "discount_pct": 39, "source": "mock"},
+    {"id": 8003, "title": "Happy Hour All Night Sunday: $5 Natural Wine",
+     "merchant": "Bar Agricole", "category": "Happy Hour",
+     "description": "Every Sunday, all-night happy hour at the bar. $5 pours from the natural wine list, $8 cheese plates.",
+     "deal_price": 5.00, "original_price": 14.00, "discount_pct": 64, "source": "mock"},
+    {"id": 8004, "title": "Lunch Special: Ramen + Gyoza Set — $18",
+     "merchant": "Ippudo", "category": "Lunch Special",
+     "description": "Signature tonkotsu ramen with toppings plus 4-piece pan-fried gyoza. Monday–Friday until 3 PM.",
+     "deal_price": 18.00, "original_price": 30.00, "discount_pct": 40, "source": "mock"},
+    {"id": 8005, "title": "Happy Hour: $4 Drafts & $5 Margaritas",
+     "merchant": "El Compadre", "category": "Happy Hour",
+     "description": "Daily happy hour on the patio 3–7 PM. $4 house drafts, $5 margaritas, complimentary chips and salsa.",
+     "deal_price": 4.00, "original_price": 13.00, "discount_pct": 69, "source": "mock"},
+    {"id": 8006, "title": "Lunch Special: 3-Course French Bistro — $28",
+     "merchant": "Balthazar", "category": "Lunch Special",
+     "description": "Soup or salad, choice of main (steak frites, moules, or croque monsieur), and dessert. Mon–Fri 11:30 AM–2:30 PM.",
+     "deal_price": 28.00, "original_price": 52.00, "discount_pct": 46, "source": "mock"},
+    {"id": 8007, "title": "Happy Hour: $8 Cocktails at the Oyster Bar",
+     "merchant": "Grand Central Oyster Bar", "category": "Happy Hour",
+     "description": "Tue–Fri 5–7 PM. $8 craft cocktails, $2 oysters on the half shell, $5 glasses of Muscadet.",
+     "deal_price": 8.00, "original_price": 18.00, "discount_pct": 56, "source": "mock"},
+    {"id": 8008, "title": "Lunch Special: Wood-Fired Pizza + Salad — $20",
+     "merchant": "Una Pizza Napoletana", "category": "Lunch Special",
+     "description": "Any 10-inch wood-fired pizza from the lunch menu plus a house or caesar salad. Dine-in only, Mon–Fri noon–3 PM.",
+     "deal_price": 20.00, "original_price": 34.00, "discount_pct": 41, "source": "mock"},
+]
+
 # ── Mock nearby deals (shown when API returns no results) ──────────────────────
 
 _MOCK_NEARBY: dict[str, list[dict]] = {
@@ -1698,6 +1735,11 @@ with tab_discover:
         items = (data or {}).get("items", [])
         total = (data or {}).get("total", 0)
 
+        # Fall back to mock data when the DB is empty or API is unreachable
+        if not items:
+            items = _MOCK_DISCOVER
+            total = len(items)
+
         _slot.empty()
 
         # ── Feature strip + section header ────────────────────────────────────
@@ -1727,7 +1769,7 @@ with tab_discover:
         if not items:
             st.html(empty_state_html(
                 "Nothing here yet",
-                "Run an ingest from the Admin tab — deals will appear right here.",
+                "Check back soon — new happy hours and lunch specials are added daily.",
             ))
         else:
             col_a, col_b = st.columns(2, gap="medium")
