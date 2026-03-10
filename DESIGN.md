@@ -1,6 +1,5 @@
 # HappyBites — Design README
 
-> **Audience:** hiring managers and designers evaluating a portfolio project.
 > **Scope:** covers the full UI redesign of the Streamlit frontend, from system thinking to implementation.
 
 ---
