@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Rusty Anchor – Specials & Promotions</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; }
+    .specials-section { background: #f9f9f9; padding: 20px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/menu">Menu</a></li>
+    <li><a href="/specials">Specials</a></li>
+    <li><a href="/reservations">Reservations</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Our Specials</h1>
+
+  <!-- ── Clean semantic section ─────────────────────────────── -->
+  <section id="happy-hour" class="specials-section">
+    <h2>Happy Hour</h2>
+    <p>
+      Join us <strong>Monday through Friday, 4pm to 7pm</strong> for
+      our nightly Happy Hour specials at the bar.
+    </p>
+    <ul>
+      <li>$4 draft beers</li>
+      <li>$6 house wines</li>
+      <li>Half-price appetizers</li>
+      <li>$7 well cocktails</li>
+    </ul>
+    <p class="restriction">Dine-in only. Must be 21 or older. Limit 2 rounds per table.</p>
+  </section>
+
+  <!-- ── Messy section: inline styles, font tags, nested spans ─ -->
+  <div class="lunch-deals">
+    <h3><span style="color:red;font-weight:bold;text-transform:uppercase;">LUNCH SPECIAL</span></h3>
+    <p>
+      <b>Weekdays</b> from <span class="time" style="font-size:14px;">11:00am</span>
+      to <span class="time" style="font-size:14px;">3pm</span>
+    </p>
+    <p>
+      Enjoy our famous
+      <strong><font color="#333" size="4">$13</font></strong> lunch combo:<br/>
+      <font size="2" color="#555">Soup or salad &amp; your choice of sandwich</font>
+    </p>
+    <p style="font-size:10px;color:#999;margin-top:8px;">
+      *Not valid with other offers.&nbsp;No substitutions.
+    </p>
+  </div>
+
+  <!-- ── Early bird with ambiguous "before" time ──────────────── -->
+  <section class="dinner-specials">
+    <h2>Early Bird Dinner</h2>
+    <p>
+      Available <em>daily</em>. Seats fill fast — order before 6 and enjoy our
+      exclusive early bird savings!
+    </p>
+    <p>
+      Prix fixe menu: <strong>$38</strong> per person.
+      Includes soup, choice of entrée, and dessert.
+    </p>
+    <p><small>Reservations required. Not available on holidays.</small></p>
+  </section>
+
+  <!-- ── Weekend brunch ───────────────────────────────────────── -->
+  <section id="brunch" class="specials-section">
+    <h2>Weekend Brunch Specials</h2>
+    <p>Every Saturday and Sunday, 10am–2pm.</p>
+    <ul>
+      <li>Bottomless mimosas – $22</li>
+      <li>Brunch combo plates from $14–$18</li>
+    </ul>
+    <p>No reservations needed. Bar seating only.</p>
+  </section>
+
+  <!-- ── Footer: should NOT be scraped ───────────────────────── -->
+  <footer>
+    <p>© 2024 The Rusty Anchor Restaurant. All rights reserved.</p>
+    <p>Special events available for private hire.</p>
+  </footer>
+</main>
+
+</body>
+</html>

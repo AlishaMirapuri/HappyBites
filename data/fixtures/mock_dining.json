@@ -1,0 +1,288 @@
+{
+  "nyc": {
+    "restaurants": [
+      {
+        "restaurant_id": "carbone-nyc",
+        "name": "Carbone",
+        "cuisine": "Italian",
+        "price_range": 4,
+        "rating": 4.8,
+        "review_count": 2341,
+        "address": {
+          "street": "181 Thompson St",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip": "10012"
+        },
+        "coordinates": {"lat": 40.7271, "lng": -74.0008},
+        "phone": "(212) 254-3000",
+        "website": "https://carbonenewyork.com",
+        "booking_url": "https://mock.opentable.com/r/carbone-new-york",
+        "image_url": "https://example.com/img/carbone.jpg",
+        "promotions": [
+          {
+            "promo_id": "carbone-pretheatre-2025",
+            "title": "Pre-Theatre Prix Fixe — 3 Courses $65",
+            "description": "Three-course pre-theatre menu featuring pasta, a main, and dessert. Includes antipasto selection. Valid for seatings before the curtain.",
+            "deal_price": 65.00,
+            "original_price": 110.00,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "17:00",
+            "end_time": "18:30",
+            "url": "https://mock.opentable.com/r/carbone-new-york/promo/pretheatre"
+          }
+        ]
+      },
+      {
+        "restaurant_id": "katz-deli-nyc",
+        "name": "Katz's Delicatessen",
+        "cuisine": "Deli",
+        "price_range": 2,
+        "rating": 4.5,
+        "review_count": 9812,
+        "address": {
+          "street": "205 E Houston St",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip": "10002"
+        },
+        "coordinates": {"lat": 40.7223, "lng": -73.9875},
+        "phone": "(212) 254-2246",
+        "website": "https://katzsdelicatessen.com",
+        "booking_url": null,
+        "image_url": "https://example.com/img/katz.jpg",
+        "promotions": [
+          {
+            "promo_id": "katz-lunch-combo",
+            "title": "Lunch Combo — Pastrami on Rye + Pickle + Soda $22",
+            "description": "Classic Katz's lunch deal: half-pound pastrami on rye with a full sour pickle and fountain soda. Weekday lunch only.",
+            "deal_price": 22.00,
+            "original_price": 29.50,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "11:00",
+            "end_time": "15:00",
+            "url": "https://mock.opentable.com/r/katz-deli-new-york/promo/lunch-combo"
+          }
+        ]
+      },
+      {
+        "restaurant_id": "le-bernardin-nyc",
+        "name": "Le Bernardin",
+        "cuisine": "French Seafood",
+        "price_range": 4,
+        "rating": 4.9,
+        "review_count": 1876,
+        "address": {
+          "street": "155 W 51st St",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip": "10019"
+        },
+        "coordinates": {"lat": 40.7622, "lng": -73.9814},
+        "phone": "(212) 554-1515",
+        "website": "https://le-bernardin.com",
+        "booking_url": "https://mock.opentable.com/r/le-bernardin-new-york",
+        "image_url": "https://example.com/img/le-bernardin.jpg",
+        "promotions": [
+          {
+            "promo_id": "le-bernardin-lunch-prix-fixe",
+            "title": "Weekday Lunch Prix Fixe — 3 Courses $85",
+            "description": "Experience Michelin three-star French seafood cuisine at a fraction of dinner prices. Three courses chosen from the lunch menu. Reserve ahead.",
+            "deal_price": 85.00,
+            "original_price": 165.00,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "12:00",
+            "end_time": "14:30",
+            "url": "https://mock.opentable.com/r/le-bernardin-new-york/promo/lunch-prix-fixe"
+          }
+        ]
+      },
+      {
+        "restaurant_id": "the-modern-nyc",
+        "name": "The Modern",
+        "cuisine": "Contemporary American",
+        "price_range": 4,
+        "rating": 4.7,
+        "review_count": 1204,
+        "address": {
+          "street": "9 W 53rd St",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip": "10019"
+        },
+        "coordinates": {"lat": 40.7617, "lng": -73.9776},
+        "phone": "(212) 333-1220",
+        "website": "https://themodernnyc.com",
+        "booking_url": "https://mock.opentable.com/r/the-modern-nyc",
+        "image_url": "https://example.com/img/the-modern.jpg",
+        "promotions": [
+          {
+            "promo_id": "modern-moma-lunch",
+            "title": "MoMA Lunch Deal — Bar Room 2 Courses $55",
+            "description": "Two courses in the Bar Room at The Modern adjacent to MoMA. Includes complimentary museum admission with lunch receipt. Wed–Fri only.",
+            "deal_price": 55.00,
+            "original_price": 90.00,
+            "currency": "USD",
+            "valid_days": ["Wed", "Thu", "Fri"],
+            "start_time": "12:00",
+            "end_time": "15:00",
+            "url": "https://mock.opentable.com/r/the-modern-nyc/promo/moma-lunch"
+          }
+        ]
+      }
+    ]
+  },
+  "sf": {
+    "restaurants": [
+      {
+        "restaurant_id": "flour-water-sf",
+        "name": "Flour + Water",
+        "cuisine": "Italian",
+        "price_range": 3,
+        "rating": 4.6,
+        "review_count": 3201,
+        "address": {
+          "street": "2401 Harrison St",
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US",
+          "zip": "94110"
+        },
+        "coordinates": {"lat": 37.7594, "lng": -122.4112},
+        "phone": "(415) 826-7000",
+        "website": "https://flourandwater.com",
+        "booking_url": "https://mock.opentable.com/r/flour-water-san-francisco",
+        "image_url": "https://example.com/img/flour-water.jpg",
+        "promotions": [
+          {
+            "promo_id": "flour-water-happy-hour-pasta",
+            "title": "Happy Hour — Half-Price Pasta Bar",
+            "description": "Select handmade pastas at half price during happy hour at the bar. Walk-ins only, first-come first-served.",
+            "deal_price": null,
+            "original_price": null,
+            "discount_pct": 50.0,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu"],
+            "start_time": "17:00",
+            "end_time": "18:00",
+            "url": "https://mock.opentable.com/r/flour-water-san-francisco/promo/happy-hour"
+          }
+        ]
+      },
+      {
+        "restaurant_id": "nopa-sf",
+        "name": "Nopa",
+        "cuisine": "American",
+        "price_range": 2,
+        "rating": 4.4,
+        "review_count": 5678,
+        "address": {
+          "street": "560 Divisadero St",
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US",
+          "zip": "94117"
+        },
+        "coordinates": {"lat": 37.7745, "lng": -122.4374},
+        "phone": "(415) 864-8643",
+        "website": "https://nopasf.com",
+        "booking_url": "https://mock.opentable.com/r/nopa-san-francisco",
+        "image_url": "https://example.com/img/nopa.jpg",
+        "promotions": [
+          {
+            "promo_id": "nopa-late-night-menu",
+            "title": "Late Night Menu — $30 for 2 Small Plates + Drinks",
+            "description": "Nopa's kitchen is open until midnight. Get any two small plates plus two house cocktails or wines for $30 after 10pm.",
+            "deal_price": 30.00,
+            "original_price": 52.00,
+            "currency": "USD",
+            "valid_days": ["Fri", "Sat"],
+            "start_time": "22:00",
+            "end_time": "23:45",
+            "url": "https://mock.opentable.com/r/nopa-san-francisco/promo/late-night"
+          }
+        ]
+      },
+      {
+        "restaurant_id": "rich-table-sf",
+        "name": "Rich Table",
+        "cuisine": "Californian",
+        "price_range": 3,
+        "rating": 4.5,
+        "review_count": 2890,
+        "address": {
+          "street": "199 Gough St",
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US",
+          "zip": "94102"
+        },
+        "coordinates": {"lat": 37.7762, "lng": -122.4213},
+        "phone": "(415) 355-9085",
+        "website": "https://richtablesf.com",
+        "booking_url": "https://mock.opentable.com/r/rich-table-san-francisco",
+        "image_url": "https://example.com/img/rich-table.jpg",
+        "promotions": [
+          {
+            "promo_id": "rich-table-industry-night",
+            "title": "Industry Night — 30% Off Food on Mondays",
+            "description": "30% off the full food menu every Monday for hospitality and service industry workers. Show your badge or business card.",
+            "deal_price": null,
+            "original_price": null,
+            "discount_pct": 30.0,
+            "currency": "USD",
+            "valid_days": ["Mon"],
+            "start_time": "17:30",
+            "end_time": "22:00",
+            "url": "https://mock.opentable.com/r/rich-table-san-francisco/promo/industry-night"
+          }
+        ]
+      }
+    ]
+  },
+  "austin": {
+    "restaurants": [
+      {
+        "restaurant_id": "launderette-austin",
+        "name": "Launderette",
+        "cuisine": "Mediterranean",
+        "price_range": 3,
+        "rating": 4.6,
+        "review_count": 1820,
+        "address": {
+          "street": "2115 Holly St",
+          "city": "Austin",
+          "state": "TX",
+          "country": "US",
+          "zip": "78702"
+        },
+        "coordinates": {"lat": 30.2627, "lng": -97.7254},
+        "phone": "(512) 382-1599",
+        "website": "https://launderetteaustin.com",
+        "booking_url": "https://mock.opentable.com/r/launderette-austin",
+        "image_url": "https://example.com/img/launderette.jpg",
+        "promotions": [
+          {
+            "promo_id": "launderette-weekday-lunch",
+            "title": "Weekday Lunch — 2 Courses $28",
+            "description": "Two-course lunch featuring seasonal mezze and a main. Perfect for a weekday business lunch or leisurely afternoon.",
+            "deal_price": 28.00,
+            "original_price": 48.00,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "11:30",
+            "end_time": "14:30",
+            "url": "https://mock.opentable.com/r/launderette-austin/promo/weekday-lunch"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "nyc": {
+    "businesses": [
+      {
+        "id": "joes-pizza-new-york",
+        "name": "Joe's Pizza",
+        "image_url": "https://example.com/img/joes-pizza.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/joes-pizza-new-york",
+        "review_count": 4821,
+        "categories": [{"alias": "pizza", "title": "Pizza"}],
+        "rating": 4.5,
+        "coordinates": {"latitude": 40.7306, "longitude": -74.0025},
+        "price": "$",
+        "location": {
+          "address1": "7 Carmine St",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip_code": "10014"
+        },
+        "display_phone": "(212) 254-4558",
+        "phone": "+12122544558",
+        "deals": [
+          {
+            "deal_id": "joes-pizza-nyc-lunch",
+            "title": "Lunch Special — 2 Slices + Drink",
+            "description": "Two slices of Joe's famous cheese or pepperoni pizza with any fountain drink. Weekday afternoons only.",
+            "deal_price": 7.00,
+            "original_price": 10.50,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "11:00",
+            "end_time": "15:00",
+            "url": "https://mock.yelp.com/biz/joes-pizza-new-york/deals/lunch"
+          }
+        ]
+      },
+      {
+        "id": "the-dead-rabbit-new-york",
+        "name": "The Dead Rabbit",
+        "image_url": "https://example.com/img/dead-rabbit.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/the-dead-rabbit-new-york",
+        "review_count": 6103,
+        "categories": [{"alias": "cocktailbars", "title": "Cocktail Bars"}],
+        "rating": 4.7,
+        "coordinates": {"latitude": 40.7032, "longitude": -74.0133},
+        "price": "$$$$",
+        "location": {
+          "address1": "30 Water St",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip_code": "10004"
+        },
+        "display_phone": "(646) 422-7906",
+        "phone": "+16464227906",
+        "deals": [
+          {
+            "deal_id": "dead-rabbit-happy-hour",
+            "title": "Happy Hour — 50% Off Craft Cocktails",
+            "description": "Half-price on all draft cocktails and select spirits during daily happy hour. One of NYC's best bars at half the price.",
+            "deal_price": null,
+            "original_price": null,
+            "discount_pct": 50.0,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "17:00",
+            "end_time": "19:00",
+            "url": "https://mock.yelp.com/biz/the-dead-rabbit-new-york/deals/happy-hour"
+          }
+        ]
+      },
+      {
+        "id": "shake-shack-times-square",
+        "name": "Shake Shack Times Square",
+        "image_url": "https://example.com/img/shake-shack.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/shake-shack-times-square",
+        "review_count": 3240,
+        "categories": [{"alias": "burgers", "title": "Burgers"}],
+        "rating": 4.0,
+        "coordinates": {"latitude": 40.7580, "longitude": -73.9855},
+        "price": "$$",
+        "location": {
+          "address1": "691 8th Ave",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip_code": "10036"
+        },
+        "display_phone": "(646) 435-0135",
+        "phone": "+16464350135",
+        "deals": [
+          {
+            "deal_id": "shake-shack-combo-deal",
+            "title": "ShackBurger Combo — $2 Off",
+            "description": "Get $2 off any ShackBurger + fries + shake combo. Use code SHACK2 at checkout or show this offer in-app.",
+            "deal_price": 15.99,
+            "original_price": 17.99,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            "start_time": null,
+            "end_time": null,
+            "url": "https://mock.yelp.com/biz/shake-shack-times-square/deals/combo"
+          }
+        ]
+      },
+      {
+        "id": "russ-and-daughters-cafe-nyc",
+        "name": "Russ & Daughters Café",
+        "image_url": "https://example.com/img/russ-daughters.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/russ-and-daughters-cafe-nyc",
+        "review_count": 2870,
+        "categories": [{"alias": "delis", "title": "Delis"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}],
+        "rating": 4.6,
+        "coordinates": {"latitude": 40.7214, "longitude": -73.9856},
+        "price": "$$$",
+        "location": {
+          "address1": "127 Orchard St",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip_code": "10002"
+        },
+        "display_phone": "(212) 475-4881",
+        "phone": "+12124754881",
+        "deals": [
+          {
+            "deal_id": "russ-daughters-weekend-brunch",
+            "title": "Weekend Brunch Special — Classic Lox Platter",
+            "description": "Full lox plate with bagel, cream cheese, capers, and all the fixings for $22. Saturday and Sunday 10am–3pm.",
+            "deal_price": 22.00,
+            "original_price": 28.00,
+            "currency": "USD",
+            "valid_days": ["Sat", "Sun"],
+            "start_time": "10:00",
+            "end_time": "15:00",
+            "url": "https://mock.yelp.com/biz/russ-and-daughters-cafe-nyc/deals/brunch"
+          }
+        ]
+      },
+      {
+        "id": "mission-chinese-nyc",
+        "name": "Mission Chinese Food",
+        "image_url": "https://example.com/img/mission-chinese.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/mission-chinese-nyc",
+        "review_count": 1942,
+        "categories": [{"alias": "chinese", "title": "Chinese"}, {"alias": "newamerican", "title": "New American"}],
+        "rating": 4.3,
+        "coordinates": {"latitude": 40.7155, "longitude": -73.9946},
+        "price": "$$",
+        "location": {
+          "address1": "171 E Broadway",
+          "city": "New York",
+          "state": "NY",
+          "country": "US",
+          "zip_code": "10002"
+        },
+        "display_phone": "(917) 376-9786",
+        "phone": "+19173769786",
+        "deals": [
+          {
+            "deal_id": "mission-chinese-tuesday-special",
+            "title": "Tuesday Night — Mapo Tofu + Drink $18",
+            "description": "Every Tuesday, enjoy our signature Mapo Tofu with a glass of house sake or beer for just $18. Dine-in only.",
+            "deal_price": 18.00,
+            "original_price": 26.00,
+            "currency": "USD",
+            "valid_days": ["Tue"],
+            "start_time": "17:30",
+            "end_time": "22:00",
+            "url": "https://mock.yelp.com/biz/mission-chinese-nyc/deals/tuesday"
+          }
+        ]
+      }
+    ]
+  },
+  "sf": {
+    "businesses": [
+      {
+        "id": "tartine-bakery-san-francisco",
+        "name": "Tartine Bakery",
+        "image_url": "https://example.com/img/tartine.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/tartine-bakery-san-francisco",
+        "review_count": 7412,
+        "categories": [{"alias": "bakeries", "title": "Bakeries"}, {"alias": "coffee", "title": "Coffee & Tea"}],
+        "rating": 4.7,
+        "coordinates": {"latitude": 37.7613, "longitude": -122.4241},
+        "price": "$$",
+        "location": {
+          "address1": "600 Guerrero St",
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US",
+          "zip_code": "94110"
+        },
+        "display_phone": "(415) 487-2600",
+        "phone": "+14154872600",
+        "deals": [
+          {
+            "deal_id": "tartine-morning-pastry",
+            "title": "Morning Pastry + Coffee — $8",
+            "description": "Any morning bun, croissant, or country cake slice with a drip coffee or cortado for $8. Weekdays until 11am.",
+            "deal_price": 8.00,
+            "original_price": 12.50,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "08:00",
+            "end_time": "11:00",
+            "url": "https://mock.yelp.com/biz/tartine-bakery-san-francisco/deals/morning"
+          }
+        ]
+      },
+      {
+        "id": "zuni-cafe-san-francisco",
+        "name": "Zuni Café",
+        "image_url": "https://example.com/img/zuni.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/zuni-cafe-san-francisco",
+        "review_count": 5209,
+        "categories": [{"alias": "californiacuisine", "title": "California Cuisine"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}],
+        "rating": 4.4,
+        "coordinates": {"latitude": 37.7749, "longitude": -122.4191},
+        "price": "$$$",
+        "location": {
+          "address1": "1658 Market St",
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US",
+          "zip_code": "94102"
+        },
+        "display_phone": "(415) 552-2522",
+        "phone": "+14155522522",
+        "deals": [
+          {
+            "deal_id": "zuni-chicken-for-two",
+            "title": "Roast Chicken for Two — $10 Off Wednesdays",
+            "description": "$10 off Zuni's legendary wood-fired whole roast chicken for two. Reserve ahead — this one sells out fast.",
+            "deal_price": 58.00,
+            "original_price": 68.00,
+            "currency": "USD",
+            "valid_days": ["Wed"],
+            "start_time": "17:30",
+            "end_time": "22:30",
+            "url": "https://mock.yelp.com/biz/zuni-cafe-san-francisco/deals/wednesday-chicken"
+          }
+        ]
+      },
+      {
+        "id": "foreign-cinema-san-francisco",
+        "name": "Foreign Cinema",
+        "image_url": "https://example.com/img/foreign-cinema.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/foreign-cinema-san-francisco",
+        "review_count": 4018,
+        "categories": [{"alias": "newamerican", "title": "New American"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}],
+        "rating": 4.3,
+        "coordinates": {"latitude": 37.7537, "longitude": -122.4175},
+        "price": "$$$",
+        "location": {
+          "address1": "2534 Mission St",
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US",
+          "zip_code": "94110"
+        },
+        "display_phone": "(415) 648-7600",
+        "phone": "+14156487600",
+        "deals": [
+          {
+            "deal_id": "foreign-cinema-sunday-brunch",
+            "title": "Sunday Brunch — Free Mimosa with Entrée",
+            "description": "Order any brunch entrée on Sunday and get a complimentary mimosa. Indoor and outdoor patio available.",
+            "deal_price": null,
+            "original_price": null,
+            "discount_pct": 15.0,
+            "currency": "USD",
+            "valid_days": ["Sun"],
+            "start_time": "11:00",
+            "end_time": "15:00",
+            "url": "https://mock.yelp.com/biz/foreign-cinema-san-francisco/deals/sunday-brunch"
+          }
+        ]
+      }
+    ]
+  },
+  "austin": {
+    "businesses": [
+      {
+        "id": "franklins-bbq-austin",
+        "name": "Franklin Barbecue",
+        "image_url": "https://example.com/img/franklins.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/franklins-bbq-austin",
+        "review_count": 8901,
+        "categories": [{"alias": "bbq", "title": "BBQ"}],
+        "rating": 4.8,
+        "coordinates": {"latitude": 30.2698, "longitude": -97.7279},
+        "price": "$$",
+        "location": {
+          "address1": "900 E 11th St",
+          "city": "Austin",
+          "state": "TX",
+          "country": "US",
+          "zip_code": "78702"
+        },
+        "display_phone": "(512) 653-1187",
+        "phone": "+15126531187",
+        "deals": [
+          {
+            "deal_id": "franklins-early-bird",
+            "title": "Early Bird Combo — Brisket + 2 Sides $24",
+            "description": "Show up before 10am and get our famous brisket plate with two sides for $24. Sells out daily so get there early!",
+            "deal_price": 24.00,
+            "original_price": 32.00,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            "start_time": "09:00",
+            "end_time": "10:00",
+            "url": "https://mock.yelp.com/biz/franklins-bbq-austin/deals/early-bird"
+          }
+        ]
+      },
+      {
+        "id": "uchiko-austin",
+        "name": "Uchiko",
+        "image_url": "https://example.com/img/uchiko.jpg",
+        "is_closed": false,
+        "url": "https://mock.yelp.com/biz/uchiko-austin",
+        "review_count": 3210,
+        "categories": [{"alias": "japanese", "title": "Japanese"}, {"alias": "sushi", "title": "Sushi Bars"}],
+        "rating": 4.7,
+        "coordinates": {"latitude": 30.3049, "longitude": -97.7389},
+        "price": "$$$",
+        "location": {
+          "address1": "4200 N Lamar Blvd",
+          "city": "Austin",
+          "state": "TX",
+          "country": "US",
+          "zip_code": "78756"
+        },
+        "display_phone": "(512) 916-4808",
+        "phone": "+15129164808",
+        "deals": [
+          {
+            "deal_id": "uchiko-happy-hour",
+            "title": "Uchiko Happy Hour — 40% Off Nigiri",
+            "description": "40% off select nigiri and rolls plus discounted cocktails. Bar and patio seating only, first-come first-served.",
+            "deal_price": null,
+            "original_price": null,
+            "discount_pct": 40.0,
+            "currency": "USD",
+            "valid_days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+            "start_time": "17:00",
+            "end_time": "18:30",
+            "url": "https://mock.yelp.com/biz/uchiko-austin/deals/happy-hour"
+          }
+        ]
+      }
+    ]
+  }
+}

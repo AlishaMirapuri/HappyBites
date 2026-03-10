@@ -1,0 +1,109 @@
+[
+  {
+    "deal_id": "0421c86cf9c1e682",
+    "source_deal_id": "raw-g01",
+    "title": "Happy Hour at Blue Smoke",
+    "description": "Mon-Fri 5-7pm. $6 draft beer.",
+    "deal_type": "happy_hour",
+    "merchant": "Blue Smoke",
+    "currency": "USD",
+    "price": 6.0,
+    "price_range": null,
+    "original_price": null,
+    "discount_pct": null,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "start_time": "17:00",
+    "end_time": "19:00",
+    "items_included": [],
+    "restrictions": [],
+    "source": "golden_test",
+    "source_url": "https://example.com/blue-smoke",
+    "last_seen": "2024-06-01T12:00:00+00:00",
+    "ingest_run_id": "run-golden",
+    "confidence": 0.78,
+    "quality_score": 0.88,
+    "validation_issues": [],
+    "dedup_key": "blue-smoke|happy_hour|01234|17:00|19:00"
+  },
+  {
+    "deal_id": "90e72c75d65287bd",
+    "source_deal_id": "raw-g02",
+    "title": "Lunch Special",
+    "description": "Weekdays 11am-3pm. Under $15.",
+    "deal_type": "lunch_special",
+    "merchant": "Caf\u00e9 Central",
+    "currency": "USD",
+    "price": null,
+    "price_range": [
+      0.0,
+      15.0
+    ],
+    "original_price": null,
+    "discount_pct": null,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "start_time": "11:00",
+    "end_time": "15:00",
+    "items_included": [],
+    "restrictions": [],
+    "source": "golden_test",
+    "source_url": "https://example.com/lunch",
+    "last_seen": "2024-06-01T12:00:00+00:00",
+    "ingest_run_id": "run-golden",
+    "confidence": 0.78,
+    "quality_score": 0.88,
+    "validation_issues": [],
+    "dedup_key": "caf-central|lunch_special|01234|11:00|15:00"
+  },
+  {
+    "deal_id": "1e910fe0cd52be19",
+    "source_deal_id": "456913202f01",
+    "title": "The Anchor - Tribeca",
+    "description": "Early bird daily 5-6:30pm. $29 prix-fixe.",
+    "deal_type": "early_bird",
+    "merchant": "The Anchor \u2014 Tribeca",
+    "currency": "USD",
+    "price": 29.0,
+    "price_range": null,
+    "original_price": null,
+    "discount_pct": null,
+    "days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "start_time": "17:00",
+    "end_time": "18:30",
+    "items_included": [
+      "soup",
+      "salad",
+      "entree"
+    ],
+    "restrictions": [
+      "dine-in only"
+    ],
+    "source": "golden_test",
+    "source_url": "https://example.com/menu",
+    "last_seen": "2024-06-01T12:00:00+00:00",
+    "ingest_run_id": "run-golden",
+    "confidence": 0.98,
+    "quality_score": 0.93,
+    "validation_issues": [],
+    "dedup_key": "the-anchor-tribeca|early_bird|0123456|17:00|18:30"
+  }
+]
