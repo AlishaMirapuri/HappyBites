@@ -180,35 +180,10 @@ _HERO_EMOJI = {
     "Happy Hour": "🍹", "Lunch Special": "🍱",
 }
 
-# Curated Unsplash photo IDs — restaurant/bar scenes, deterministically picked by deal_id
-CATEGORY_PHOTOS: dict[str, list[str]] = {
-    "Happy Hour": [
-        "1514362545857-3bc16c4c7d1b",  # cocktails at bar
-        "1517248135467-4c7edcad34c4",  # restaurant interior
-        "1559339352-11d035aa65de",     # bar counter with drinks
-        "1470337458703-4ad1d8f15ca0",  # lively bar scene
-        "1551024709-8f23befc548e",     # cocktail close-up
-    ],
-    "Lunch Special": [
-        "1414235077428-338989a2e8c0",  # vibrant food bowl
-        "1565299624946-b28f40a0ae38",  # wood-fired pizza
-        "1559847844-5315695dadae",     # ramen close-up
-        "1568901346375-23c9450c58cd",  # gourmet burger
-        "1482049016688-2d3e1b311543",  # brunch plate
-        "1484980765958-7ff1b0c0c49e",  # street tacos
-    ],
-}
-_DEFAULT_PHOTOS = CATEGORY_PHOTOS["Happy Hour"]
-
-
 def _hero_img(deal_id, cat: str) -> str:
-    pool = CATEGORY_PHOTOS.get(cat, _DEFAULT_PHOTOS)
-    idx  = int(hashlib.md5(str(deal_id).encode()).hexdigest()[:4], 16) % len(pool)
-    pid  = pool[idx]
-    return (
-        f"https://images.unsplash.com/photo-{pid}"
-        "?w=800&h=320&fit=crop&crop=center&auto=format&q=80"
-    )
+    """Return a deterministic picsum.photos URL — always loads, seeded by deal_id."""
+    seed = int(hashlib.md5(str(deal_id).encode()).hexdigest()[:8], 16) % 1000
+    return f"https://picsum.photos/seed/hb{seed}/800/320"
 
 
 # ── API helpers ───────────────────────────────────────────────────────────────
