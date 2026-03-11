@@ -1708,12 +1708,14 @@ with tab_discover:
 
         data  = api_get("/deals", params=params)
         items = (data or {}).get("items", [])
-        total = (data or {}).get("total", 0)
+
+        # Strip any non-restaurant deals that may remain in the DB from old seed data
+        items = [d for d in items if d.get("category") in DEAL_TYPES]
 
         # Fall back to mock data when the DB is empty or API is unreachable
         if not items:
             items = _MOCK_DISCOVER
-            total = len(items)
+        total = len(items)
 
         _slot.empty()
 
